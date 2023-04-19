@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 import sys
-
+import json
 
 def add_syspath():
     path = os.path.join(
@@ -27,9 +27,13 @@ class ReadFile():
     def read_iat(self,*row_name):
         return self.file_obj.iat[row_name]
 
-f = ReadFile('test_data/api/api_test_case.xlsx')
+if __name__ == "__mai__":
+    f = ReadFile('test_data/api/api_test_case.xlsx')
 
 
-print(f.read_iat(2,3))
+    print(f.read_iat(0,3))
+    print(f.read_iat(0,5))
+    print(json.loads(f.read_iat(0,6))['code'])
+    # print(f.read_iat(0,7))
 
 

@@ -10,7 +10,7 @@ class DoRequest(object):
     def __init__(self,url,encoding='utf-8',pool_connections=10,pool_maxsize=10, max_retries=2,timeout=30,verify=True):
         self._url=url
         self._encoding=encoding
-        self._headers = {}
+        self._headers ={'Content-Type':'application/json'}
         self._cookies = {}
         self._proxies={}
         self._timeout=timeout
