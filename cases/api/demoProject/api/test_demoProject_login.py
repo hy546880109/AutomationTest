@@ -1,3 +1,11 @@
+'''
+Author: hy hy546880109@qq.com
+Date: 2023-04-19 22:51:18
+LastEditors: hy hy546880109@qq.com
+LastEditTime: 2023-04-19 23:05:24
+FilePath: /AutomationTest/cases/api/demoProject/api/test_demoProject_login.py
+Description: 
+'''
 from common.hamcrest.hamcrest import assert_that
 from base.api.demoProject.api_demoProject_client import API_DemoProject_Client
 from common.md5Passwd import Md5_add
@@ -5,7 +13,7 @@ from common.readXlsx import ReadFile
 import pytest
 import ujson
 
-file_path = 'F://AutomationTest/test_data/api/api_test_case.csv'
+file_path = 'test_data/api/api_test_case.csv'
 f = ReadFile(file_path)
 
 @pytest.fixture()

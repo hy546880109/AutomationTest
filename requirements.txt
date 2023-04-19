@@ -27,3 +27,6 @@ PyMySQL==1.0.2
 redis==3.5.3
 sqlacodegen==3.0.0b2
 SQLAlchemy==1.4.39
+pandas
+fsspec
+openpyxl

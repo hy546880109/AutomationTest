@@ -1,9 +1,9 @@
 '''
 Author: HY\harry hy546880109@qq.com
 Date: 2023-04-19 17:03:08
-LastEditors: HY\harry hy546880109@qq.com
-LastEditTime: 2023-04-19 17:10:43
-FilePath: \AutomationTest\cases\api\demoProject\api\test_home.py
+LastEditors: hy hy546880109@qq.com
+LastEditTime: 2023-04-19 23:05:37
+FilePath: /AutomationTest/cases/api/demoProject/api/test_home.py
 Description: 
 '''
 from common.hamcrest.hamcrest import assert_that
@@ -13,7 +13,7 @@ from common.readXlsx import ReadFile
 import pytest
 import ujson
 
-file_path = 'F://AutomationTest/test_data/api/api_test_case.csv'
+file_path = 'test_data/api/api_test_case.csv'
 f = ReadFile(file_path)
 
 @pytest.fixture()
