@@ -1,3 +1,11 @@
+'''
+Author: HY\harry hy546880109@qq.com
+Date: 2023-04-17 12:29:12
+LastEditors: HY\harry hy546880109@qq.com
+LastEditTime: 2023-04-20 18:18:24
+FilePath: \AutomationTest\common\selenium\driverTool.py
+Description: 
+'''
 #-*- coding:utf8 -*-
 # 作者 yanchunhuo
 # 创建时间 2018/01/19 22:36
@@ -8,7 +16,7 @@ from selenium.webdriver.ie import webdriver as ie_webdriver
 from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
 from selenium.webdriver.firefox.options import Options as Firefox_Options
 from selenium.webdriver.chrome.options import Options as Chrome_Options
-
+import os
 class DriverTool:
 
     @classmethod
@@ -16,7 +24,6 @@ class DriverTool:
         driver=None
         browser_type=browser_type.lower()
         download_file_content_types = "application/octet-stream,application/vnd.ms-excel,text/csv,application/zip,application/binary"
-
         if browser_type=='ie':
             opt = ie_webdriver.Options()
             opt.force_create_process_api = True
@@ -37,7 +44,9 @@ class DriverTool:
             firefox_options.profile=firefox_profile
             driver = webdriver.Remote(selenium_hub, webdriver.DesiredCapabilities.FIREFOX.copy(),options=firefox_options)
         elif browser_type=='chrome':
+            os.makedirs('cache', exist_ok=True)
             chrome_options=Chrome_Options()
+            chrome_options.add_argument('--disk-cache-dir=./cache')
             prefs={'download.default_directory':Read_WEB_UI_Config().web_ui_config.download_dir,'profile.default_content_settings.popups':0}
             chrome_options.add_experimental_option('prefs',prefs)
             if Read_WEB_UI_Config().web_ui_config.is_chrome_headless.lower()=='true':
